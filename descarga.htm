@@ -1,0 +1,1388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/2c38f3d850.js" crossorigin="anonymous" type="7643ca824c1067b18952f39c-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" type="7643ca824c1067b18952f39c-text/javascript"></script>
+<link rel="icon" type="image/x-icon" href="https://d31uz8lwfmyn8g.cloudfront.net/Assets/favicon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title>Primeros Pasos | Henry Prep Course</title>
+<style>
+      
+    @font-face {
+  font-family: "Avenir-Book";
+  src: url(https://henry-social-resources.s3-sa-east-1.amazonaws.com/fonts/Avenir/Avenir-Book-01-995b34ab56b423abffe48e64bf8b8df1.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url(https://henry-social-resources.s3-sa-east-1.amazonaws.com/fonts/Avenir/Avenir-Medium-09-7d635ea94b4460e86cd678e9e754a643.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Roman";
+  src: url(https://henry-social-resources.s3-sa-east-1.amazonaws.com/fonts/Avenir/Avenir-Roman-12-c6d37b26297461a78d10f169dd5cf46d.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(https://henry-social-resources.s3-sa-east-1.amazonaws.com/fonts/Avenir/Avenir-Light-07-33f6570a328d84cb7d06e829a0c7ca1b.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Heavy";
+  src: url(https://henry-social-resources.s3.sa-east-1.amazonaws.com/fonts/Avenir/Avenir-Heavy-05-ff80b6894f8375c59a197caa24aac91c.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: url(https://henry-social-resources.s3-sa-east-1.amazonaws.com/fonts/Avenir/Avenir-Black-03-968e784956ff9b6a05c29cc3be18cad0.ttf);
+}
+
+    .headerContainer {
+    /* border: 2px dashed orange; */
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    height: 68px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .headerContained {
+    /* border: 2px dashed red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    font-family: "Avenir-Roman";
+    font-size: 16px;
+    font-display: swap;
+    line-height: 22px;
+    padding: 0 30px 0 30px;
+    z-index: 1000;
+    color: #ffffff;
+    background-color: #000000;
+  }
+  
+  .headerContained .lessonTitle {
+    font-family: "Avenir-Heavy";
+    font-size: 16px;
+    font-display: swap;
+    line-height: 22px;
+    color: #ffffff;
+  }
+    * {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    /* border: 2px dashed; */
+    margin: auto;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+  }
+  
+  main {
+    /* border: 2px dashed red; */
+    max-width: 1500px;
+    margin-top: 68px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feedback {
+    position: fixed;
+    background: #ffff01;
+    padding: 8px 16px;
+    height: 40px;
+    border-radius: 8px;
+    bottom: 5px;
+    left: 5px;
+    z-index: 1200;
+  }
+  
+  .feedback a {
+    font-family: "Avenir-Black";
+    font-size: 16px;
+    font-display: swap;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+  }
+    .topnav {
+  /* border: 2px dashed blue; */
+  display: flex;
+  justify-items: end;
+  justify-content: flex-end;
+  padding-top: 5px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.topnav .activeLink {
+  color: black;
+  border-bottom: 3px solid black;
+  border-radius: 0;
+  text-decoration: none;
+  font-family: 'Avenir-Medium';
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.topnav a {
+  font-family: 'Avenir-Medium';
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.topnav a:hover {
+  color: grey;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+    .sidebar {
+    /* border: 2px dashed blue; */
+    position: fixed;
+    width: 240px;
+    margin-left: 8px;
+    padding-top: 75px;
+  }
+  
+  .sidebar .tocTitle {
+    font-family: "Avenir-Black";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    font-display: swap;
+    line-height: 25px;
+    display: flex;
+    color: #000000;
+    padding-left: 2px;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+  }
+  
+  .sidebar .tocBox {
+    /* border: 2px dashed; */
+    display: flex;
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+    font-family: "Avenir-Heavy";
+    font-size: 16px;
+    font-display: swap;
+    line-height: 28px;
+    color: #000000;
+    margin-top: 1rem;
+  }
+  
+  .sidebar a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    color: rgb(88, 80, 80);
+  }
+  
+  .sidebar a:active {
+    color: rgb(255, 238, 0);
+  }
+  
+  .sidebar ul {
+    /* border: 2px dashed; */
+    list-style: none;
+    margin-left: -1.5rem;
+  }
+  
+  .sidebar li li {
+    font-family: "Avenir-Roman";
+    font-weight: normal;
+    font-size: 16px;
+    font-display: swap;
+    line-height: 28px;
+  }
+    .lesson {
+    /* border: 2px dashed green; */
+    font-family: 'Avenir-Roman';
+    font-size: 16px;
+    font-display: swap;
+    line-height: 18px;
+    text-align: justify;
+    padding: 0 2rem 4rem 300px;
+    width: 100%;
+    max-width: 98vw;
+    margin-top: 60px;
+  }
+  
+  .lesson .hide {
+    display: none;
+  }
+  
+  .lesson :target:before {
+    content: '';
+    display: block;
+    height: 85px;
+  }
+  
+  .lesson img[alt~='HenryLogo'] {
+    display: none;
+  }
+  
+  .lesson h1 {
+    display: inline-block;
+    font-family: 'Avenir-Black';
+    font-size: 48px;
+    font-display: swap;
+    line-height: 66px;
+    color: #2e2e2e;
+  
+    border-bottom-style: solid;
+    border-bottom-width: 25px;
+    border-bottom-color: #ffff01;
+  
+    height: 64px;
+    margin: 0px 0 50px 0;
+  }
+  
+  .lesson h1 + h4 {
+    margin: -40px 0 3rem 0;
+    font-family: 'Avenir-Black';
+    font-size: 32px;
+    font-display: swap;
+    line-height: 32px;
+  }
+  
+  .lesson h1 + h2 {
+    margin-top: 0;
+  }
+  
+  .lesson h2 {
+    font-family: 'Avenir-Black';
+    font-weight: 900;
+    font-size: 32px;
+    font-display: swap;
+    line-height: 32px;
+    text-align: left;
+    color: #2e2e2e;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lesson h2#homework {
+    display: inline-block;
+    font-family: 'Avenir-Black';
+    font-size: 48px;
+    font-display: swap;
+    line-height: 66px;
+    color: #1fa32a;
+  }
+  
+  .lesson h3 {
+    font-family: 'Avenir-Black';
+    font-weight: 900;
+    font-size: 24px;
+    font-display: swap;
+    line-height: 24px;
+    text-align: left;
+    color: #2e2e2e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lesson h4 {
+    font-family: 'Avenir-Black';
+    font-weight: 900;
+    font-size: 18px;
+    font-display: swap;
+    line-height: 18px;
+    text-align: left;
+    color: #2e2e2e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lesson img {
+    width: auto;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+  
+  .lesson img[alt~='logo'] {
+    box-shadow: none;
+    width: 350px;
+  }
+  
+  .lesson img[alt~='no-box'] {
+    box-shadow: none;
+  }
+  
+  .lesson ul {
+    list-style: square;
+  }
+  
+  .lesson li {
+    font-family: 'Avenir-Heavy';
+    font-size: 16px;
+    font-display: swap;
+    line-height: 22px;
+  }
+  
+  .lesson a {
+    font-family: 'Avenir-Black';
+    font-size: 16px;
+    font-display: swap;
+  }
+  
+  .lesson .iframeContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+  
+  .lesson .sandboxContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .lesson iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .lesson table {
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+    margin-top: 40px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    text-align: center !important;
+  }
+  
+  .lesson th {
+    background-color: rgb(170, 170, 170);
+    padding: 8px;
+    text-align: center !important;
+  }
+  
+  .lesson thead {
+    text-align: center !important;
+    border-bottom: 1px solid rgb(150, 150, 150);
+  }
+  
+  .lesson td {
+    padding: 5px;
+    text-align: center !important;
+  }
+  
+  tr + td {
+    border-right: 1px solid gray !important;
+  }
+  
+  .rightBox {
+    /* border: 1px solid red; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    width: 97vw;
+    max-width: 1500px;
+    margin-top: 5rem;
+    /* margin-bottom: 1rem; */
+  }
+  
+  .homeworkBox {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-top: none;
+    box-sizing: border-box;
+    width: 160px;
+    height: 41px;
+    padding: 1.1rem;
+  }
+  
+  .homeworkBox:hover {
+    background-color: rgb(230, 230, 230);
+  }
+  
+  .homeworkBox a {
+    text-decoration: none;
+    font-family: 'Avenir-Black';
+    font-size: 16px;
+    font-display: swap;
+    line-height: 119.6%;
+    color: green;
+  }
+  
+  .quizzBox {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-top: none;
+    box-sizing: border-box;
+    width: 160px;
+    height: 41px;
+    padding: 1.1rem;
+  }
+  
+  .quizzBox:hover {
+    background-color: rgb(230, 230, 230);
+  }
+  
+  .quizzBox a {
+    text-decoration: none;
+    font-family: 'Avenir-Black';
+    font-size: 16px;
+    font-display: swap;
+    line-height: 119.6%;
+    color: rgb(128, 79, 0);
+  }
+  
+  .readingTime {
+    font-family: 'Avenir-Book';
+    font-size: 14px;
+    font-display: swap;
+    line-height: 119.6%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    width: 160px;
+    height: 41px;
+    padding: 1.1rem;
+  }
+  
+  
+    code {
+  font-family: Monospace;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: rgb(231, 231, 231);
+  padding: 2px 7px;
+}
+
+pre[class*="language-"],
+code[class*="language-"] {
+  background: none;
+  padding: 0;
+  border-radius: 0.2rem;
+  color: #d4d4d4;
+  font-weight: normal;
+  font-size: 14px;
+  text-shadow: none;
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono",
+    "Courier New", monospace;
+  margin: auto;
+  width: auto;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"] *::selection,
+code[class*="language-"] *::selection {
+  text-shadow: none;
+  background: #264f78;
+}
+
+@media print {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  overflow: auto;
+  background: #2e2e2e;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  color: #db4c69;
+  background: #1e1e1e;
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: 0.7;
+}
+
+.token.doctype .token.doctype-tag {
+  color: #569cd6;
+}
+
+.token.doctype .token.name {
+  color: #9cdcfe;
+}
+
+.token.comment,
+.token.prolog {
+  color: #6a9955;
+}
+
+.token.punctuation,
+.language-html .language-css .token.punctuation,
+.language-html .language-javascript .token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.inserted,
+.token.unit {
+  color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.deleted {
+  color: #ce9178;
+}
+
+.language-css .token.string.url {
+  text-decoration: underline;
+}
+
+.token.operator,
+.token.entity {
+  color: #d4d4d4;
+}
+
+.token.operator.arrow {
+  color: #569cd6;
+}
+
+.token.atrule {
+  color: #ce9178;
+}
+
+.token.atrule .token.rule {
+  color: #c586c0;
+}
+
+.token.atrule .token.url {
+  color: #9cdcfe;
+}
+
+.token.atrule .token.url .token.function {
+  color: #dcdcaa;
+}
+
+.token.atrule .token.url .token.punctuation {
+  color: #d4d4d4;
+}
+
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.keyword.module,
+.token.keyword.control-flow {
+  color: #c586c0;
+}
+
+.token.function,
+.token.function .token.maybe-class-name {
+  color: #dcdcaa;
+}
+
+.token.regex {
+  color: #d16969;
+}
+
+.token.important {
+  color: #569cd6;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.constant {
+  color: #9cdcfe;
+}
+
+.token.class-name,
+.token.maybe-class-name {
+  color: #4ec9b0;
+}
+
+.token.console {
+  color: #9cdcfe;
+}
+
+.token.parameter {
+  color: #9cdcfe;
+}
+
+.token.interpolation {
+  color: #9cdcfe;
+}
+
+.token.punctuation.interpolation-punctuation {
+  color: #569cd6;
+}
+
+.token.boolean {
+  color: #569cd6;
+}
+
+.token.property,
+.token.variable,
+.token.imports .token.maybe-class-name,
+.token.exports .token.maybe-class-name {
+  color: #9cdcfe;
+}
+
+.token.selector {
+  color: #d7ba7d;
+}
+
+.token.escape {
+  color: #d7ba7d;
+}
+
+.token.tag {
+  color: #569cd6;
+}
+
+.token.tag .token.punctuation {
+  color: #808080;
+}
+
+.token.cdata {
+  color: #808080;
+}
+
+.token.attr-name {
+  color: #9cdcfe;
+}
+
+.token.attr-value,
+.token.attr-value .token.punctuation {
+  color: #ce9178;
+}
+
+.token.attr-value .token.punctuation.attr-equals {
+  color: #d4d4d4;
+}
+
+.token.entity {
+  color: #569cd6;
+}
+
+.token.namespace {
+  color: #4ec9b0;
+}
+/*********************************************************
+* Language Specific
+*/
+
+pre[class*="language-javascript"],
+code[class*="language-javascript"],
+pre[class*="language-jsx"],
+code[class*="language-jsx"],
+pre[class*="language-typescript"],
+code[class*="language-typescript"],
+pre[class*="language-tsx"],
+code[class*="language-tsx"] {
+  color: #9cdcfe;
+}
+
+pre[class*="language-css"],
+code[class*="language-css"] {
+  color: #ce9178;
+}
+
+pre[class*="language-html"],
+code[class*="language-html"] {
+  color: #d4d4d4;
+}
+
+.language-regex .token.anchor {
+  color: #dcdcaa;
+}
+
+.language-html .token.punctuation {
+  color: #808080;
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[class*="language-"] > code[class*="language-"] {
+  position: relative;
+  z-index: 1;
+}
+
+.line-highlight.line-highlight {
+  background: #f7ebc6;
+  box-shadow: inset 5px 0 0 #f7d87c;
+  z-index: 0;
+}
+
+    div.footerContainer {
+  /* border: 2px dashed blue; */
+  background-color: #000000;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  z-index: 20;
+}
+
+div.footerContained {
+  /* border: 2px dashed red; */
+  display: flex;
+  justify-content: center;
+  color: rgb(240, 240, 240);
+  position: absolute;
+  font-family: "Avenir-Black";
+  font-size: 18px;
+  line-height: 33px;
+  width: 100%;
+  max-width: 1500px;
+  z-index: 20;
+}
+
+div.footerContained p {
+  margin-bottom: 0;
+}
+
+    .headerResponsive {
+  position: fixed;
+  display: none;
+  width: 100%;
+  color: white;
+  align-items: center;
+  background: #000000;
+  min-height: 48px;
+  height: 40px;
+  z-index: 999;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.headerResponsive .leftContent {
+  display: flex;
+  padding-left: 12px;
+  justify-content: space-between;
+  margin-right: 60px;
+}
+
+.headerResponsive .menuDiv {
+  align-items: center;
+  align-self: center;
+  margin: auto;
+}
+
+.headerResponsive .menuDiv a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  background: #000000;
+  width: 100%;
+}
+
+.headerResponsive input[type='checkbox'],
+.headerResponsive .fa-bars,
+.headerResponsive .fa-times {
+  position: absolute;
+  box-sizing: border-box;
+  right: 3px;
+  top: 7px;
+  width: 48px;
+  height: 48px;
+}
+
+.headerResponsive .menuDiv ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.headerResponsive .menuDiv li {
+  border-bottom: 1px solid gray;
+}
+
+.headerResponsive .menuDiv a {
+  text-align: center;
+}
+
+.headerResponsive .fa-bars,
+.headerResponsive .fa-times {
+  font-size: 32px;
+  pointer-events: none;
+  text-align: center;
+}
+
+.headerResponsive .menuDiv input[type='checkbox'] {
+  opacity: 0;
+}
+
+.headerResponsive .menuDiv nav {
+  display: none;
+}
+
+.headerResponsive .menuDiv input:checked ~ nav {
+  display: block;
+}
+
+.headerResponsive .menuDiv input:checked ~ .fa-bars {
+  display: none;
+}
+
+.headerResponsive .menuDiv input:not(:checked) ~ .fa-times {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    display: none;
+  }
+
+  .topnav ul {
+    display: none;
+  }
+
+  .headerContainer {
+    display: none;
+    height: 40px;
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .lesson {
+    padding-left: 8px;
+    padding-right: 8px;
+    /* width: 100vw; */
+    max-width: 100vw;
+    line-height: 22px;
+    text-align: left;
+  }
+
+  .rightBox {
+    position: relative;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-left: 8px;
+    justify-content: left;
+  }
+
+  .quizzBox {
+    border-left: none;
+    border-top: 1px solid;
+  }
+
+  .homeworkBox {
+    border-left: none;
+    border-top: 1px solid;
+  }
+
+  .lesson img {
+    max-width: 95vw;
+  }
+
+  .lesson ul {
+    padding-left: 15px;
+  }
+
+  /* .lesson .readingTime {
+    margin-top: 25px;
+    margin-bottom: -20px;
+  } */
+
+  .readerBarDiv {
+    display: none;
+  }
+
+  .feedback {
+    z-index: 10;
+  }
+
+  .headerResponsive {
+    display: block;
+  }
+
+  .headerResponsive .leftContent {
+    padding-top: 12px;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .lesson h1 {
+    font-size: 32px;
+  }
+
+  .lesson h1 + h4 {
+    font-size: 24px;
+  }
+
+  .lesson h2 {
+    font-size: 24px;
+  }
+}
+
+    
+    </style>
+</head>
+<body>
+<div class="reader-bar-start">
+<div class="headerResponsive">
+<div class="leftContent">
+<span><img src="https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-sm.png" alt='logo Henry' height=22px class="d-inline-block align-text-top"></span><span>Primeros Pasos</span>
+</div>
+<div class="menuDiv">
+<input type="checkbox">
+<i class="fas fa-bars"></i>
+<i class="fas fa-times"></i>
+<nav>
+<ul><li><a href="/">Intro</a></li>
+<li><a href="/Primeros_Pasos/">Primeros Pasos</a></li>
+<li><a href="/Git/">Git</a></li>
+<li><a href="/Git_y_GitHub/">Git y GitHub</a></li>
+<li><a href="/Conceptos/">Conceptos</a></li>
+<li><a href="/JavaScript_I/">JS I</a></li>
+<li><a href="/JavaScript_II/">JS II</a></li>
+<li><a href="/JavaScript_III/">JS III</a></li>
+<li><a href="/JavaScript_IV/">JS IV</a></li>
+<li><a href="/JavaScript_V/">JS V</a></li>
+<li><a href="/JavaScript_VI/">JS VI</a></li>
+<li><a href="/HTML/">HTML</a></li>
+<li><a href="/CSS/">CSS</a></li>
+<li><a href="/Glosario/">Glosario</a></li>
+<li><a href="/Challenge/">Challenge</a></li></ul>
+</nav>
+</div>
+</div>
+<div class="headerContainer">
+<div class="headerContained">
+<img src="https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-sm.png" alt='logo Henry' height=27px class="d-inline-block align-text-top">
+<div>
+<span class="lessonTitle">Primeros Pasos</span> | <span>Henry Prep Course</span>
+</div>
+</div>
+</div>
+<main>
+<div class="topnav" id='myTopnav'>
+<ul class="nav">
+<li class="link">
+<a href="/" class="nav-link" role="menuitem">Intro</a>
+</li>
+<li class="link">
+<span class="nav-link activeLink" tabindex="-1" aria-current="true">Primeros Pasos</span>
+</li>
+<li class="link">
+ <a href="/Git/" class="nav-link" role="menuitem">Git</a>
+</li>
+<li class="link">
+<a href="/Git_y_GitHub/" class="nav-link" role="menuitem">Git y GitHub</a>
+</li>
+<li class="link">
+<a href="/Conceptos/" class="nav-link" role="menuitem">Conceptos</a>
+</li>
+<li class="link">
+<a href="/JavaScript_I/" class="nav-link" role="menuitem">JS I</a>
+</li>
+<li class="link">
+<a href="/JavaScript_II/" class="nav-link" role="menuitem">JS II</a>
+</li>
+<li class="link">
+<a href="/JavaScript_III/" class="nav-link" role="menuitem">JS III</a>
+</li>
+<li class="link">
+<a href="/JavaScript_IV/" class="nav-link" role="menuitem">JS IV</a>
+</li>
+<li class="link">
+<a href="/JavaScript_V/" class="nav-link" role="menuitem">JS V</a>
+</li>
+<li class="link">
+<a href="/JavaScript_VI/" class="nav-link" role="menuitem">JS VI</a>
+</li>
+<li class="link">
+<a href="/HTML/" class="nav-link" role="menuitem">HTML</a>
+</li>
+<li class="link">
+<a href="/CSS/" class="nav-link" role="menuitem">CSS</a>
+</li>
+<li class="link">
+<a href="/Glosario/" class="nav-link" role="menuitem">Glosario</a>
+</li>
+<li class="link">
+<a href="/Challenge/" class="nav-link" role="menuitem">Challenge</a>
+</li>
+</ul>
+</div>
+<div class='sidebar'>
+<div class="tocTitle">
+Contenido de la clase
+</div>
+<div class="tocBox">
+<nav class="toc">
+<ul><li><a href="#homeworks">Homeworks </a></li><li><a href="#c%C3%B3mo-usar-slack">Cómo usar SLACK </a></li><li><a href="#editores-de-texto">Editores de Texto </a><ul><li><a href="#sublime-text">Sublime Text </a></li><li><a href="#atom">Atom </a></li><li><a href="#visual-studio-code">Visual Studio Code </a></li></ul></li><li><a href="#instalando-node.js">Instalando Node.JS </a></li><li><a href="#git">Git </a><ul><li><a href="#%C2%BFqu%C3%A9-es-git%3F">¿Qué es Git? </a></li><li><a href="#instalaci%C3%B3n">Instalación </a></li></ul></li><li><a href="#github">GitHub </a><ul><li><a href="#%C2%BFqu%C3%A9-es-github%3F">¿Qué es GitHub? </a></li><li><a href="#comenzando">Comenzando </a></li></ul></li></ul>
+</nav>
+</div>
+</div>
+<div class='rightBox'>
+<div class="readingTime">
+Tiempo de lectura 14 min
+</div>
+</div>
+<div class='lesson'>
+<p><img src="https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png" alt="HenryLogo"></p>
+<table class="hide" width="100%" style='table-layout:fixed;'>
+<tr>
+<td>
+<a href="https://airtable.com/shrSzEYT4idEFGB8d?prefill_clase=00-PrimerosPasos">
+<img src="https://static.thenounproject.com/png/204643-200.png" width="100" />
+<br>
+Hacé click acá para dejar tu feedback sobre esta clase.
+</a>
+</td>
+</tr>
+</table>
+<h1 id="primeros-pasos" tabindex="-1">Primeros Pasos <a class="anchor-link" href="#primeros-pasos"></a></h1>
+<h4 id="preparando-tu-compu" tabindex="-1">Preparando tu compu <a class="anchor-link" href="#preparando-tu-compu"></a></h4>
+<div class="iframeContainer">
+<iframe src="https://player.vimeo.com/video/638636752" title="Instructivo de Primeros Pasos" allow="autoplay; fullscreen"></iframe>
+</div>
+<h2 id="homeworks" tabindex="-1">Homeworks <a class="anchor-link" href="#homeworks"></a></h2>
+<p>En este <a href="https://github.com/soyHenry/Prep-Course/tree/main/">link</a> vas a encontrar el repositorio con las homeworks de cada unidad en su correspondiente carpeta.</p>
+<p><strong>IMPORTANTE:</strong> Para ejecutar los tests de cada homework tenes que pararte en la carpeta donde clonaste tu repo (es decir la carpeta donde está este <code>README.md</code>) y ejecutar el siguiente comando:</p>
+<pre class="language-bash"><code class="hljs language-bash"><span class="token function">npm</span> <span class="token function">install</span></code></pre>
+<p>Esto instalará todas las dependencias necesarias (lo tenés que hacer una sóla vez), una vez terminado y cada vez que quieras ver cuantos tests pasaste ejecutá:</p>
+<pre class="language-bash"><code class="hljs language-bash"><span class="token function">npm</span> <span class="token builtin class-name">test</span> <span class="token punctuation">{</span>nombre del homework<span class="token punctuation">}</span>.test.js</code></pre>
+<p>Por ejemplo, para ejecutar los tests del homework 02, ejecutar: <code>npm test JSII.test.js</code>, el del homework 01: <code>npm test JSI.test.js</code><br>
+y así.</p>
+<blockquote>
+<p>No todos los homeworks tienen tests, está detallado en la descripción de cada uno.</p>
+</blockquote>
+<blockquote>
+<p><strong>Importante</strong>: Github cambió el método de autenticación, ahora es por PAT (Personal Access Token), para crearlo pueden seguir este <a href="https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">link</a>. Pueden elegir expiration infinita para hacerlo una sóla vez.</p>
+</blockquote>
+<h2 id="c%C3%B3mo-usar-slack" tabindex="-1">Cómo usar SLACK <a class="anchor-link" href="#c%C3%B3mo-usar-slack"></a></h2>
+<div class="iframeContainer">
+<iframe src="https://player.vimeo.com/video/548902078?h=e82a766bab&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1264" height="720" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Prep Course - Intro a Slack"></iframe>
+</div>
+<blockquote>
+<p>Gracias <a href="https://github.com/NicoConstantin">Nico Constantin (FT#12)</a> por el video y la explicación!</p>
+</blockquote>
+<ul>
+<li>Para ingresar al espacio de Slack del Prep Course de Henry, por favor ingresa a la <a href="https://www.admissions.soyhenry.com/">plataforma de admisión</a> donde encontrarás el link de acceso al mismo.</li>
+</ul>
+<h2 id="editores-de-texto" tabindex="-1">Editores de Texto <a class="anchor-link" href="#editores-de-texto"></a></h2>
+<p>Para poder escribir código que pueda ser interpretado por un lenguaje de programación, necesitamos utilizar un editor de texto.</p>
+<p>Hay varios, puedes probarlos y optar por el que te sientas más a gusto.</p>
+<p>A continuación veremos una lista de los más populares:</p>
+<h3 id="sublime-text" tabindex="-1">Sublime Text <a class="anchor-link" href="#sublime-text"></a></h3>
+<p><img src="/_src/assets/00-PrimerosPasos/sublimeText_screen.png" alt="Sublime Text"></p>
+<p>Es un editor de texto liviano, que cuenta con una serie de plugins para adaptarlo a las necesidades de cada desarrollador.</p>
+<p>Es multiplataforma, por lo que se puede instalar tanto en Windows, como Linux y OS X.</p>
+<p>Para instalarlo, realizaremos los siguientes pasos:</p>
+<h4 id="en-windows-o-en-os-x" tabindex="-1">En Windows o en OS X <a class="anchor-link" href="#en-windows-o-en-os-x"></a></h4>
+<ol>
+<li>
+<p>Nos dirigimos a la página oficial de <a href="https://www.sublimetext.com">Sublime Text</a>.</p>
+</li>
+<li>
+<p>Al ingresar, detectará automáticamente el sistema operativo que tenemos, y nos sugerirá descargar el instalador apropiado.</p>
+</li>
+<li>
+<p>Presionamos el botón <strong><em>Download</em></strong>.</p>
+</li>
+<li>
+<p>Elegimos la opción adecuada según nuestro sistema operativo e iniciamos la descarga.</p>
+</li>
+</ol>
+<p><img src="/_src/assets/00-PrimerosPasos/sublimeText_download.png" alt="Sublime Text Download"></p>
+<ol start="5">
+<li>Finalizada la descarga, ejecutamos el instalador, seleccionamos las opciones <strong><em>siguiente, siguiente, etc</em></strong>, hasta completar el proceso.</li>
+</ol>
+<h4 id="en-linux%2C-en-la-distribuci%C3%B3n-ubuntu-y-derivados" tabindex="-1">En Linux, en la distribución Ubuntu y derivados <a class="anchor-link" href="#en-linux%2C-en-la-distribuci%C3%B3n-ubuntu-y-derivados"></a></h4>
+<ol>
+<li>Nos dirigimos al sitio oficial de Sublime Text. Aquí encontrarás las instrucciones para instalarlo:</li>
+</ol>
+<p><a href="https://www.sublimetext.com/docs/3/linux_repositories.html">Descargar Sublime Text para Linux</a></p>
+<ol start="2">
+<li>En la terminal, ejecutamos el siguiente comando, para instalar la clave GPG:</li>
+</ol>
+<pre class="language-shell"><code class="hljs language-shell"><span class="token function">wget</span> -q0 - https://download.sublimetext.com/sublimehq-pub.gpg <span class="token operator">|</span> <span class="token function">sudo</span> apt-key <span class="token function">add</span> -</code></pre>
+<ol start="3">
+<li>Para asegurarnos de que <code>apt</code> esté configurado para trabajar con orígenes https, ejecutamos:</li>
+</ol>
+<pre class="language-shell"><code class="hljs language-shell"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> apt-transport-https</code></pre>
+<ol start="4">
+<li>Luego para agregar el repositorio estable, ejecutamos:</li>
+</ol>
+<pre class="language-shell"><code class="hljs language-shell"><span class="token builtin class-name">echo</span> <span class="token string">"deb https://download.sublimetext.com/ apt/stable/"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/sublime-text.list</code></pre>
+<ol start="5">
+<li>Finalmente, procedemos a instalar el programa:</li>
+</ol>
+<pre class="language-shell"><code class="hljs language-shell"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> sublime-text</code></pre>
+<p>Ahora, si en el <strong>Menú de inicio</strong> buscamos <strong>Sublime text</strong>, veremos la siguiente imagen:</p>
+<p><img src="/_src/assets/00-PrimerosPasos/sublimeText_linux.png" alt="Sublime Text Linux"></p>
+<h3 id="atom" tabindex="-1">Atom <a class="anchor-link" href="#atom"></a></h3>
+<p><img src="/_src/assets/00-PrimerosPasos/atom_site.png" alt="Atom Site"></p>
+<p>Es un editor de código abierto, disponible tanto para Windows, como Linux y para OS X.</p>
+<p>Tiene integrada una consola de Git y Github, para llevar un control de versiones de tus proyectos.<br>
+Para comenzar el proceso de instalación, realizamos los siguientes pasos:</p>
+<p>En Windows, Linux o en OS X, nos dirigimos al sitio oficial, mediante el siguiente enlace:</p>
+<p><a href="https://atom.io/">https://atom.io/</a></p>
+<p>Al ingresar, el navegador detecta automáticamente el instalador que necesitamos bajar, según nuestro sistema operativo.</p>
+<p>Allí, presionamos el botón Download para almacenarlo en nuestra computadora.</p>
+<h4 id="en-windows" tabindex="-1">En Windows <a class="anchor-link" href="#en-windows"></a></h4>
+<p>Una vez finalizada la descarga, hacemos doble click en el instalador y esperamos a que finalice el proceso de instalación.</p>
+<h4 id="en-ubuntu-y-derivados" tabindex="-1">En Ubuntu y derivados <a class="anchor-link" href="#en-ubuntu-y-derivados"></a></h4>
+<p>Descomprimimos el instalador, hacemos doble click, y nos dirigimos a: <code>/usr/bin/atom</code></p>
+<p>Al hacer doble click, se abrirá el editor.</p>
+<h3 id="visual-studio-code" tabindex="-1">Visual Studio Code <a class="anchor-link" href="#visual-studio-code"></a></h3>
+<p><img src="/_src/assets/00-PrimerosPasos/vsc_console.png" alt="VSC Console"></p>
+<p>Es un editor desarrollado por Microsoft.</p>
+<p>Tiene integrado el control de versiones mediante Git y Github para tener un seguimiento de tus proyectos. Brinda una cantidad de extensiones que facilitan el trabajo de un desarrollador.</p>
+<p>Para descargarlo, nos dirigimos al sitio oficial, en la sección Dowload y descargamos el instalador según nuestro Sistema Operativo:</p>
+<p><a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p>
+<p><img src="/_src/assets/00-PrimerosPasos/vsc_download.png" alt="VSC Download"></p>
+<p>Una vez finalizada la descarga, procedemos a ejecutar el instalador.</p>
+<h2 id="instalando-node.js" tabindex="-1">Instalando Node.JS <a class="anchor-link" href="#instalando-node.js"></a></h2>
+<p>Para instalar Node js en nuestra computadora, nos dirigimos al sitio oficial:</p>
+<p><a href="https://nodejs.org/es/">https://nodejs.org/es/</a></p>
+<p>Al ingresar, el sitio detectará nuestro Sistema Operativo y nos sugerirá que descarguemos el instalador adecuado.</p>
+<p><img src="/_src/assets/00-PrimerosPasos/nodejs_screen.png" alt="Node.JS Screen"></p>
+<p>Para proceder a la descarga, seleccionamos la versión LTS, que es la versión estable.<br>
+Una vez finalizada la descarga, procedemos a ejecutar el instalador.</p>
+<p>Para corroborar que Node js se instaló correctamente, procedemos a ejecutar el siguiente comando por la consola o terminal de nuestro sistema operativo:</p>
+<pre class="language-shell"><code class="hljs language-shell"><span class="token function">node</span> -v</code></pre>
+<p>Y si seguimos los pasos anteriores, la consola o terminal, nos devolverá la versión de Node js que tenemos instalada:</p>
+<pre class="language-shell"><code class="hljs language-shell">v12.18.3</code></pre>
+<h2 id="git" tabindex="-1">Git <a class="anchor-link" href="#git"></a></h2>
+<h3 id="%C2%BFqu%C3%A9-es-git%3F" tabindex="-1">¿Qué es Git? <a class="anchor-link" href="#%C2%BFqu%C3%A9-es-git%3F"></a></h3>
+<p>Git es un sistema de control de versiones, distribuido y open source. Un control de versiones es un sistema que registra los cambios realizados en un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante.</p>
+<h3 id="instalaci%C3%B3n" tabindex="-1">Instalación <a class="anchor-link" href="#instalaci%C3%B3n"></a></h3>
+<h4 id="para-mac-y-linux" tabindex="-1">Para Mac y Linux <a class="anchor-link" href="#para-mac-y-linux"></a></h4>
+<p>Ver estos enlaces:</p>
+<p><a href="https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Instalaci%C3%B3n-de-Git">https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Instalación-de-Git</a></p>
+<p><a href="https://www.youtube.com/watch?v=PSULlxUk744">https://www.youtube.com/watch?v=PSULlxUk744</a></p>
+<p><a href="https://www.youtube.com/watch?v=oV0spTF71AI">https://www.youtube.com/watch?v=oV0spTF71AI</a></p>
+<h4 id="para-windows" tabindex="-1">Para Windows <a class="anchor-link" href="#para-windows"></a></h4>
+<p>Ingreso a <a href="https://git-scm.com">https://git-scm.com</a> y descargo la útlima versión.</p>
+<p><img src="/_src/assets/00-PrimerosPasos/instalar_window.png" alt="installGit"></p>
+<p>Una vez descargado, se abre el archivo .exe y van a visualizar la siguiente ventana</p>
+<p><img src="/_src/assets/00-PrimerosPasos/1.png" alt="installGit"></p>
+<p>Clickeamos “Next” hasta que llegamos a esta parte:</p>
+<p><img src="/_src/assets/00-PrimerosPasos/2.png" alt="installGit"></p>
+<p>En este momento de la instalación si quieres puedes elegir el editor de texto que van a usar. (Importante, ténganlo instalado antes de instalar Git)</p>
+<p>Seguimos clickeando “Next” y luego “Install”</p>
+<p><img src="/_src/assets/00-PrimerosPasos/3.png" alt="installGit"></p>
+<p>Por último, finalizar! Si seleccionan la opción “Launch Git Bash”, una vez que finalizan la instalación se va a abrir la consola</p>
+<p><img src="/_src/assets/00-PrimerosPasos/4.png" alt="installGit"></p>
+<p>Otra forma de abrir la consola es haciendo click derecho sobre el escritorio y elegir la opción “Git Bash Here”</p>
+<p><img src="/_src/assets/00-PrimerosPasos/consola.png" alt="installGit"></p>
+<p>Una vez instalado Git van a poder visualizar la consola: ingresamos el comando <code>git --version</code> para chequear que está instalado. Si ven la consola así, ya están listos para comenzar a trabajar!</p>
+<p><img src="/_src/assets/00-PrimerosPasos/5.png" alt="installGit"></p>
+<h2 id="github" tabindex="-1">GitHub <a class="anchor-link" href="#github"></a></h2>
+<h3 id="%C2%BFqu%C3%A9-es-github%3F" tabindex="-1">¿Qué es GitHub? <a class="anchor-link" href="#%C2%BFqu%C3%A9-es-github%3F"></a></h3>
+<p>Es una red para almacenar tus repositorios, sería un repositorio de repositorios. Es uno de los tantos disponibles en internet, y el más popular. GitHub <strong>NO</strong> es lo mismo que Git, aunque funcionen muy bien juntos. Github es un lugar donde podés compartir tu código o encontrar otros proyectos. También actúa como portfolio para cualquier código en el que hayas trabajado.</p>
+<h3 id="comenzando" tabindex="-1">Comenzando <a class="anchor-link" href="#comenzando"></a></h3>
+<ol>
+<li>Para comenzar nos creamos una cuenta — &gt; <a href="https://github.com">https://github.com</a> 🚀</li>
+</ol>
+<p><img src="/_src/assets/00-PrimerosPasos/github_register.png" alt="GitHub-Register"></p>
+<ol start="2">
+<li>Una vez registrados, ingresamos con usuario y contraseña:</li>
+</ol>
+<p><img src="/_src/assets/00-PrimerosPasos/github_login.png" alt="GitHub-Login"></p>
+<ol start="3">
+<li>Listo! Ahora vemos una página de inicio como la siguiente:</li>
+</ol>
+<p><img src="/_src/assets/00-PrimerosPasos/github_home.png" alt="GitHub-Home"></p>
+<p>A la izquierda tenemos un acceso rápido a <strong>mis repositorios</strong>.</p>
+<p>En el centro vemos la actividad de los usuarios a quienes seguimos.</p>
+<p>En la parte superior derecha, vemos nuestra imagen de perfil. Desde ahí podemos desplegar opciones para gestionar nuestro perfil, repositorios y configuración. Si accedemos a nuestro perfil encontramos algo parecido a esto:</p>
+<p><img src="/_src/assets/00-PrimerosPasos/github_profile.png" alt="GitHub-profile"></p>
+<p>Podemos poner una foto de perfil, editar el nombre, agregar la ubicación, link y organizaciones a las que pertenecemos. En el centro podemos fijar los repositorios que queremos mostrar para que estén visibles en nuestro perfil.</p>
+<p>Más abajo se muestra un diagrama de todas las contribuciones que vamos haciendo a los repositorios.</p>
+<p>Si accedemos a la pestaña de arriba que dice <code>repositorios</code> veremos una lista de todos ellos. Cuando elegimos un repositorio para ver, nos lleva a una página como esta:</p>
+<p><img src="/_src/assets/00-PrimerosPasos/github_repo.png" alt="GitHub-repo"></p>
+<p>Así se ve un repositorio. Arriba a la izquierda tenemos el <code>nombre de usuario/nombre del repo</code>.</p>
+<p>En el centro podemos ver todos los archivos que tiene dentro el repo. El botón verde que dice <code>Code</code> es importante, si clickeamos ahí vamos a poder obtener la url del repo, para así poder <strong><em>clonarlo</em></strong> (esto lo veremos más adelante).</p>
+<p>Arriba a la derecha encontramos tres botones. <code>Watch</code> nos permite seguir un repositorio, mientras que con <code>Star</code> podemos marcar como favorito un repo que nos guste. Por último tenemos <code>Fork</code>, este es <strong>muy</strong> importante, lo vamos a necesitar cuando hagamos el <strong><em>Challenge!</em></strong></p>
+<p>Ya tenemos todo para empezar… Éxitos!!! 🍀</p>
+<table class="hide" width="100%" style='table-layout:fixed;'>
+<tr>
+<td>
+<a href="https://airtable.com/shrSzEYT4idEFGB8d?prefill_clase=00-PrimerosPasos">
+<img src="https://static.thenounproject.com/png/204643-200.png" width="100" />
+<br>
+Hacé click acá para dejar tu feedback sobre esta clase.
+</a>
+</td>
+</tr>
+</table>
+<hr>
+<h4 id="si-tienes-dudas-sobre-este-tema%2C-puedes-consultarlas-en-el-canal-01a-primeros-pasos-de-slack" tabindex="-1">Si tienes dudas sobre este tema, puedes consultarlas en el canal <em><strong>01a-primeros-pasos</strong></em> de Slack <a class="anchor-link" href="#si-tienes-dudas-sobre-este-tema%2C-puedes-consultarlas-en-el-canal-01a-primeros-pasos-de-slack"></a></h4>
+</div>
+</main>
+<div class="feedback">
+<a href='https://airtable.com/shrSzEYT4idEFGB8d?prefill_clase=00-PrimerosPasos' target="_blank">
+Dejanos tu feedback!👍
+</a>
+</div>
+<div class="footerContainer">
+<div class="footerContained">
+<p>Hecho con 💛 por alumnos de Henry</p>
+</div>
+</div>
+<div class="readerBarDiv">
+
+<div>
+<button id="upBtn" style="position:fixed; width:32px; height:32px; border-radius:50%; border:none; background-color:black; right:20px; bottom:55px; color:white; z-index:999; focus:outline-none; cursor:pointer; transition-duration:500ms; opacity:0; pointer-events:none;"><i class="arrow up"></i></button>
+</div>
+<style>
+  .arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  </style>
+<script type="7643ca824c1067b18952f39c-text/javascript">
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 250) {
+      upBtn.style.opacity = 1;
+      upBtn.style.pointerEvents = 'auto';     
+    }
+    else {
+      upBtn.style.opacity = 0;
+      upBtn.style.pointerEvents = 'none';
+    }
+  })
+
+  upBtn.addEventListener('click', () => {
+    let start = document.querySelector('.reader-bar-start')
+    start.scrollIntoView({behavior: "smooth"})
+  })
+  </script>
+
+<div id="readerBarContainer" style="height:3px;width:100%;background-color:black;position:fixed;top:66px;left:0;z-index:1099;transition:0.2s;">
+<div id="readerBar" style="height:3px;width:0;background-color:yellow;position:fixed;top:66px;left:0;z-index:1099;transition:0.2s;"></div>
+</div>
+<script type="7643ca824c1067b18952f39c-text/javascript">
+    let winH = window.innerHeight;
+    const content = document.querySelector('.reader-bar-start');
+
+    let contentH = content.offsetHeight;
+    let contentS = contentH - winH;
+    let readerBar = document.getElementById('readerBar');
+    window.addEventListener('load', () => {
+      document.addEventListener ('scroll', updateBar);
+    })
+    window.addEventListener('resize', redefine)
+
+    function redefine() {
+      winH = window.innerHeight;
+      contentH = content.offsetHeight;
+      contentS = contentH - winH;
+      updateBar();
+    }
+
+    function updateBar() {
+      const pagePos = window.scrollY; 
+      const updatedBar = pagePos * 100 / contentS;
+      readerBar.style.width = updatedBar + "%";
+    }
+  </script>
+</div>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="7643ca824c1067b18952f39c-|49" defer=""></script></body>
+</html>
